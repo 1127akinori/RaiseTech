@@ -1,102 +1,49 @@
-# 第3回授業課題
+# 第3回課題
 
 ## 【課題】
-- サンプルアプリケーションのデプロイ
-- APサーバーについて調べる
+- サンプルアプリケーションの起動
+
+<img width="1512" alt="スクリーンショット 2023-12-21 0 01 59" src="https://github.com/1127akinori/RaiseTech/assets/149952775/1fb5afc2-256d-441c-9a39-a5ab53e71e8f">
+
+- APサーバーについて
+Puma vesion5.6.5
+Railsを動かすためのアプリケーションサーバーの一種
+
+<img width="1512" alt="スクリーンショット 2023-12-24 14 57 02" src="https://github.com/1127akinori/RaiseTech/assets/149952775/a98e9caa-14cb-4ba7-a62f-6d3fdc26c4cd">
+```
+akinori:~/environment/raisetech-live8-sample-app (main) $ rails s
+=> Booting Puma
+=> Rails 7.0.4 application starting in development 
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Puma version: 5.6.5 (ruby 3.1.2-p20) ("Birdie's Version")
+*  Min threads: 5
+*  Max threads: 5
+*  Environment: development
+*          PID: 12222
+* Listening on http://127.0.0.1:8080
+* Listening on http://[::1]:8080
+Use Ctrl-C to stop
+```
+
 - DBサーバーについて調べる
 
-<br>
-
-## 【課題詳細】
-### -  サンプルアプリケーションのデプロイ  -
 
 
-ブラウザでのアクセスに成功。
+<img width="1512" alt="スクリーンショット 2023-12-21 0 01 59" src="https://github.com/1127akinori/RaiseTech/assets/149952775/1fb5afc2-256d-441c-9a39-a5ab53e71e8f">
 
-<br>
+## サンプルアプリケーションの起動で行ったこと
 
-***
-#### 実際に行った手順＆学んだこと
-***
-- `ruby -v`でRubyのバージョン確認を行う
-- コマンドの一覧は`ruby -h`（より詳細は`ruby --help`）で確認が出来る
-   - `rvm install -v`では**Ruby Version Manager**のバージョン確認が可能
-   - **RVM**（Ruby Version Manager）とは
-     - 同じデバイスに複数インストールされたRubyを管理するよう設計されたオペレーティングシステム
-    
-- 指定されたRubyのバージョンを`rvm install 3.1.2`にてインストール
-- `rvm use 3.1.2`で使用したいバージョンへの切替が出来る
-   - `rvm list`でも、インストールされているRubyの確認と、どのバージョンが適用されているかを確認することが出来る
+- `ruby -v`でrubyのバージョン確認を行う
+- 　指定されたバージョンを`rvm install`でインストールして`rvm use 指定したバージョン`で使用する
+ - RVM（Ruby Version Manager）とは
+ - Ruby環境をインストール・操作・管理することができるコマンドラインツール
+ - `ruby -h` `rvm -h`でコマンド一覧を表示させれる 
    
-   
-- `docker system prune -a`を入力し、未使用データの削除を行う **《容量の確保》**
-   - **Are you sure you want to continue? [y/n]** の横に`y（yesの意）`を入力
-   - **Docker**とは
-     - ひとつのOSに対して多数のアプリケーション実行環境（開発環境）を構築可能
-     - AWSではDockerのオープンソリューションと商用ソリューションの両方がサポートされている
-   
-- 下記コマンドにてMariaDBを削除して**MySQL8.0**をインストールする
-  ``` 
-  curl -fsSL https://raw.githubusercontent.com/MasatoshiMizumoto/raisetech_documents/main/aws/scripts/mysql_amazon_linux_2.sh | sh
-  ```
-   - **Curlコマンド**とは
-     - 様々なオプションを指定することで、データ取得時の条件や、取得する情報を変えることが出来る
-   - **MySQL**とは
-     - Webアプリケーション開発でよく使われるデータベースシステム
-    
-- 下記コマンドにてMySQLの初期パスワードを確認する
-  ```
-  sudo cat /var/log/mysqld.log | grep "temporary password" | awk '{print $13}'
-  ```
    - **sudoコマンド**とは
      - 一般ユーザーがソフトをインストールしたり、ソフトを実行したりする場合、Linuxではsudoを一番始めに宣言して使用する
      - 宣言することで管理者権限で実行することが可能となる
 
-- `mysql -u root -p`を入力し、Enter passwordに初期パスワードを入力してログインする
-- 下記で初期パスワードの変更を行う
-  ```
-  ALTER USER 'root'@'localhost' IDENTIFIED BY '設定するパスワード';
-  ```
-   - 「設定するパスワード」の文字を消し、任意のパスワードを新しく入力する
-   - 実行したら`FLUSH PRIVILEGES;`を入力することで、変更が有効になる
-   - ログアウトする場合は`exit`を入力する
-   - MySQLのコマンドキャンセルは`\c`で可能
-   - もう一度`mysql -u root -p`でログインを行い、パスワードが変更されていることを確認しログアウトする
-
-- `cd raisetech-live8-sample-app`でディレクトリの移動を行う
-- 「database.yml.sample」ファイルのコピーを下記コマンドで行う
-   ```
-   cp config/database.yml.sample config/database.yml
-   ```
-   - 「config」フォルダ内の「database.yml.sample」ファイルが、「config」フォルダ内に「**database.yml**」というファイル名でコピーされる
-   - **YML**とは
-     - YAML Ain’t Markup Languageの略称
-     - XMLやJSONのような人間が読めるデータシリアライズ言語のひとつ
-     - 他の言語と比較しても軽量で比較的わかりやすいため、読みやすいとされている
-   
-- コピーしたファイル内にある「password」欄に設定した新しいパスワードを入力する
-- MySQLの設定
-  - `my.cnf`というファイルに対して行う
-  - `/etc/my.cnf`はグローバルオプションファイル
-  - `cat /etc/my.cnf`で上記のファイル内容が表示される
-  - **catコマンド**とは
-    - 「連結する」を意味するconcatenateが名前の由来
-    - ファイルの内容を連結して標準出力に出力するコマンド
-    - 単一のファイル内容を表示するために使用されることが多い
-- `socket=/var/lib/mysql/mysql.sock`のスラッシュ以下をコピー
-  - 「database.yml」ファイル内にある「socket」の内容を書き換える（2箇所）
-  - **socket**とは
-    - プログラムとネットワークをつなげる接続口のこと
-    
-- `bin/setup`で**環境構築**を行う
-  - バージョン`2.3.14`の**Bundler**がインストールされていることが確認できる
-  - **Bundler**とは
-    - gemのバージョン管理やgemの依存関係を管理してくれるgemのこと
-  - **gem**とは
-    - gem形式にパッケージングされたRuby言語用の外部ライブラリ
-  - **ライブラリ**とは
-    - 汎用性の高い機能を他のプログラムで呼び出して使えるように部品化して集めたファイルのこと
-    
 - `node -v`でNodeのバージョン確認をする
 - 指定のバージョンを`nvm install 17.9.1`でインストールする
   - **NVM**（Node Version Manager）とは
