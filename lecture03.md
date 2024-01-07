@@ -3,7 +3,7 @@
 ## 【課題】
 - サンプルアプリケーションの起動
 
-(第３回課題１.png)
+[(第３回課題１.png)](https://github.com/1127akinori/RaiseTech/blob/lecture03/%E7%AC%AC%EF%BC%93%E5%9B%9E%E8%AA%B2%E9%A1%8C%EF%BC%91.png)
 
 - APサーバーについて
 Puma vesion5.6.5
