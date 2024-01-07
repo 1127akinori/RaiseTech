@@ -3,13 +3,13 @@
 ## 【課題】
 - サンプルアプリケーションの起動
 
-(images/第３回課題１.png)
+(第３回課題１.png)
 
 - APサーバーについて
 Puma vesion5.6.5
 Railsを動かすためのアプリケーションサーバーの一種
 
-(images/第３回課題2.png)
+(第３回課題2.png)
 ```
 
 　➖ DBサーバーについて調べる
@@ -27,7 +27,7 @@ $ sudo service mysqld status
 ```
 
 サーバー停止後の画面
-(images/第３回課題3.png)
+(第３回課題3.png)
 
 
 
