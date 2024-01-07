@@ -3,13 +3,13 @@
 ## 【課題】
 - サンプルアプリケーションの起動
 
-<img width="1512" alt="スクリーンショット 2023-12-21 0 01 59" src="https://github.com/1127akinori/RaiseTech/assets/149952775/1fb5afc2-256d-441c-9a39-a5ab53e71e8f">
+(images/第3回講座課題１.png)
 
 - APサーバーについて
 Puma vesion5.6.5
 Railsを動かすためのアプリケーションサーバーの一種
 
-<img width="1512" alt="スクリーンショット 2023-12-24 14 57 02" src="https://github.com/1127akinori/RaiseTech/assets/149952775/a98e9caa-14cb-4ba7-a62f-6d3fdc26c4cd">
+(images/第3回講座課題２.png)
 ```
 
 　➖ DBサーバーについて調べる
@@ -27,7 +27,7 @@ $ sudo service mysqld status
 ```
 
 サーバー停止後の画面
-<img width="1512" alt="スクリーンショット 2023-12-28 12 21 56" src="https://github.com/1127akinori/RaiseTech/assets/149952775/633b128d-550e-484d-b264-c3744ff62709">
+(images/第3回講座課題３.png)
 
 
 
