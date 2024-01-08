@@ -7,27 +7,26 @@
 
 
 - APサーバーについて
-Puma vesion5.6.5
-Railsを動かすためのアプリケーションサーバーの一種
+- Puma vesion5.6.5
+- Railsを動かすためのアプリケーションサーバーの一種
 
 ![画像２](第３回課題２.png)
 
 
-　➖ DBサーバーについて調べる
+# DBサーバーについて調べる
 
-# Mysqlログイン(-pはパスあり)
+## Mysqlログイン(-pはパスあり)
 mysql -u root -p
-# Mysqlの起動
+## Mysqlの起動
 sudo service mysqld start
-# Mysqlの停止
+## Mysqlの停止
 $ sudo service mysqld stop
-# MySQLの再起動
+## MySQLの再起動
 $ sudo service mysqld restart
-# Mysqlの状態確認
+## Mysqlの状態確認
 $ sudo service mysqld status
 
-
-サーバー停止後の画面
+- サーバー停止後の画面
 
 ![画像３](第３回課題３.png)
 
