@@ -3,13 +3,14 @@
 ## 【課題】
 - サンプルアプリケーションの起動
 
-[(第３回課題１.png)](https://github.com/1127akinori/RaiseTech/blob/lecture03/%E7%AC%AC%EF%BC%93%E5%9B%9E%E8%AA%B2%E9%A1%8C%EF%BC%91.png)
+![画像１](第３回課題１.png)
+
 
 - APサーバーについて
 Puma vesion5.6.5
 Railsを動かすためのアプリケーションサーバーの一種
 
-[(第３回課題2.png)](https://github.com/1127akinori/RaiseTech/blob/lecture03/%E7%AC%AC%EF%BC%93%E5%9B%9E%E8%AA%B2%E9%A1%8C%EF%BC%92.png)
+![画像２](第３回課題２.png)
 
 
 　➖ DBサーバーについて調べる
@@ -28,7 +29,7 @@ $ sudo service mysqld status
 
 サーバー停止後の画面
 
-[(第３回課題3.png)](https://github.com/1127akinori/RaiseTech/blob/lecture03/%E7%AC%AC%EF%BC%93%E5%9B%9E%E8%AA%B2%E9%A1%8C%EF%BC%93.png)
+![画像３](第３回課題３.png)
 
 
 ## 【感想】
