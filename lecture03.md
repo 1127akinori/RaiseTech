@@ -116,6 +116,5 @@ DBサーバーとはアプリケーションで利用するデータを格納し
 RailsはBundleを使用し開発に必要なgemパッケージを管理する。インストール、パッケージの更新やアンインストールなどの操作も行っている。
 
 
-　参考URL
- https://kitsune.blog/rails-summary  
- https://wa3.i-3-i.info/word13277.html
+　画像貼り付けの参考URL
+https://www.pupha.net/archives/1632/
